@@ -8,7 +8,6 @@ let hasBlackjack = false
 let message = ""
 let sum = 0
 const cards = []
-console.log(cards)
 
 function startGame(){
     isAlive = true
@@ -51,9 +50,15 @@ function renderGame(){
 startGameBtn.addEventListener("click", ()=> {
     startGame()
 })
-newCardBtn.addEventListener("click", ()=> {
-    let thirdCard = createRandomCard()
-    sum += thirdCard
-    cards.push(thirdCard)
-    renderGame()
+newCardBtn.addEventListener("click", () => {
+        if(hasBlackjack === false  && isAlive){
+            let thirdCard = createRandomCard()
+            sum += thirdCard
+            cards.push(thirdCard)
+        renderGame()
+        }
 })
+
+
+
+
